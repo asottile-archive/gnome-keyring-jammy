@@ -1,0 +1,2 @@
+usr/lib/systemd/user/gnome-keyring.service usr/lib/systemd/user/graphical-session-pre.target.wants/gnome-keyring.service
+usr/lib/systemd/user/gnome-keyring-ssh.service usr/lib/systemd/user/graphical-session-pre.target.wants/gnome-keyring-ssh.service
