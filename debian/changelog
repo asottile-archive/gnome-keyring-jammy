@@ -1,3 +1,9 @@
+gnome-keyring (40.0-3ubuntu2+asottile1) jammy; urgency=medium
+
+  * cherry-pick a1770768 to fix arm64
+
+ -- Anthony Sottile <asottile@umich.edu>  Fri, 03 Jun 2022 07:01:54 -0700
+
 gnome-keyring (40.0-3ubuntu2) jammy; urgency=medium
 
   * No-change rebuild for ppc64el baseline bump.

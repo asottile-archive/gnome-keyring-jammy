@@ -1,0 +1,21 @@
+From: Jos Dehaes <jos.dehaes@gmail.com>
+Date: Mon, 14 Mar 2022 13:42:45 +0100
+Subject: #105 fix looping off the end of the operations array
+
+---
+ daemon/ssh-agent/gkd-ssh-agent-service.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/daemon/ssh-agent/gkd-ssh-agent-service.c b/daemon/ssh-agent/gkd-ssh-agent-service.c
+index a9f74ab..c3e4bb3 100644
+--- a/daemon/ssh-agent/gkd-ssh-agent-service.c
++++ b/daemon/ssh-agent/gkd-ssh-agent-service.c
+@@ -184,7 +184,7 @@ handle_request (GkdSshAgentService *self,
+ 
+ 	/* Decode the operation; on failure, just pass through */
+ 	if (egg_buffer_get_byte (req, 4, NULL, &op) &&
+-	    op <= GKD_SSH_OP_MAX && operations[op] != NULL)
++	    op < GKD_SSH_OP_MAX && operations[op] != NULL)
+ 		func = operations[op];
+ 	else
+ 		func = relay_request;
